@@ -33,4 +33,9 @@ export const todoRepo = {
   delete: (id: string): void => {
     todos = todos.filter((t) => t.id !== id);
   },
+
+  /** @internal test only */
+  _reset: (): void => {
+    todos = [];
+  },
 };
