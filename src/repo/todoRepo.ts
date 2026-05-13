@@ -10,13 +10,13 @@ let todos: Todo[] = [];
 export const todoRepo = {
   getAll: () => {},
 
-  getById: () => {},
+  getById: (id: string): Todo | undefined => {},
 
-  create: () => {},
+  create: (title: string): Todo => {},
 
-  update: () => {},
+  update: (id: string, data: Partial<Pick<Todo, "title" | "completed">>): Todo => {},
 
-  delete: (): void => {},
+  delete: (id: string): void => {},
 
   /** @internal test only */
   _reset: (): void => {

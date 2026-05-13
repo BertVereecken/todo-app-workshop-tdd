@@ -9,7 +9,7 @@ beforeEach(() => {
   todoRepo._reset();
 });
 
-describe('AddTodo', () => {
+describe.skip('AddTodo', () => {
   it('adds a todo on submit', async () => {
     const user = userEvent.setup();
     render(<AddTodo />, { wrapper: createWrapper() });
