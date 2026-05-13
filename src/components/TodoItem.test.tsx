@@ -11,7 +11,7 @@ beforeEach(() => {
 
 describe('TodoItem', () => {
   it('renders title and raw epoch', () => {
-    const todo = todoRepo.create('Hello');
+    const todo = todoRepo.create();
     render(<TodoItem todo={todo} />, { wrapper: createWrapper() });
 
     expect(screen.getByText('Hello')).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe('TodoItem', () => {
 
   it('toggles completed on checkbox click', async () => {
     const user = userEvent.setup();
-    const todo = todoRepo.create('Toggle me');
+    const todo = todoRepo.create();
     render(<TodoItem todo={todo} />, { wrapper: createWrapper() });
 
     await user.click(screen.getByRole('checkbox'));

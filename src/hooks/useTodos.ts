@@ -9,7 +9,7 @@ export const useTodos = () =>
 export const useCreateTodo = () => {
   const qc = useQueryClient();
   return useMutation({
-    mutationFn: (title: string) => Promise.resolve(todoRepo.create(title)),
+    mutationFn: (title: string) => Promise.resolve(todoRepo.create()),
     onSuccess: () => qc.invalidateQueries({ queryKey: TODOS_KEY }),
   });
 };
